@@ -14,7 +14,8 @@ const App = () => {
     } else {
     const noteObject = {
       name: newName,
-      number: newPhone}
+      number: newPhone,
+      id: newName}
     setPersons(persons.concat(noteObject))
     setNewName('')
     setNewPhone('')
