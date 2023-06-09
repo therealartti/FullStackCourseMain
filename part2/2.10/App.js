@@ -37,7 +37,7 @@ const App = () => {
     setNewFilter(event.target.value)
   }
   var filtered = function(person) {
-    return person.name.toLowerCase().includes(newFilter)
+    return person.name.toLowerCase().includes(newFilter.toLowerCase())
   }
 
   return (
