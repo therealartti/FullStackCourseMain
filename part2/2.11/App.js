@@ -14,7 +14,7 @@ const App = () => {
     } else {
     const noteObject = {
       name: newName,
-      phone: newPhone}
+      number: newPhone}
     setPersons(persons.concat(noteObject))
     setNewName('')
     setNewPhone('')
@@ -26,6 +26,7 @@ const App = () => {
     axios
       .get('http://localhost:3001/persons').then(response => {
         console.log('promise fulfilled')
+        console.log(response.data)
         setPersons(response.data)
       })
   }, [])
@@ -85,7 +86,7 @@ const PersonForm = (props) => {
 const Persons = (props) => {
   return (
   props.persons.map(person => 
-  <div key={person.name}> {person.name} {person.phone}</div>
+  <div key={person.name}> {person.name} {person.number}</div>
   )
   )
 }
